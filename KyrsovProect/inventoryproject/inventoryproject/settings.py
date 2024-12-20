@@ -132,6 +132,8 @@ STATIC_ROOT = BASE_DIR / "asert"
 LOGIN_REDIRECT_URL = 'dashboard-index'
 LOGOUT_REDIRECT_URL = 'user-logout'
 
+LOGIN_URL = 'user-login'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
