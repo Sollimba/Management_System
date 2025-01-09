@@ -1,0 +1,45 @@
+{% extends 'partials/base.html' %}
+{% block title %} Настройки персонала {% endblock %}
+
+{% block content %}
+
+{% include 'partials/topnav.html' %}
+<div class="container d-flex justify-content-center" style="margin-top: 50px;">
+    <div class="card shadow-lg" style="width: 50%;">
+        <div class="card-header bg-info text-white text-center">
+            <h3>Профиль</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <span class="h4">Информация о профеле </span>
+                    <hr>
+                    <table class="table bg-white table-borderless">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Имя</th>
+                                <td>{{ workers.username }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>{{ workers.email }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Телефон</th>
+                                <td>{{ workers.profile.phone }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Адресс</th>
+                                <td>{{ workers.profile.address }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center align-items-center">
+                    <img class="img-thumbnail" src="{{ workers.profile.image.url }}" alt="Profile Picture" style="max-width: 150px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
