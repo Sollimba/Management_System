@@ -4,7 +4,25 @@
 {% block content %}
 
 {% include 'partials/topnav.html' %}
-    <!--Table-->
+<!-- Message add -->
+<div aria-live="polite" aria-atomic="true" style="position: fixed; bottom: 20px; right: 20px; z-index: 1050;">
+    {% for message in messages %}
+    {% if message %}
+    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto text-success">Успех</strong>
+            <small>Сейчас</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            {{ message }}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<!-- End Message add -->
+<!--Table-->
     <div class="container">
         <div class="row my-4">
             <div class="col-md-4">
